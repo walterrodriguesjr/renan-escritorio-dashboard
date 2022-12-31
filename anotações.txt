@@ -1,0 +1,38 @@
+CONFIGURADO VARIÁVEIS DE AMBIENTE
+
+1-cmd padrão do template 
+    docker-compose up -d && sh ..docker/app/config.sh
+
+2-configurado a .env 
+
+CONFIGURADO BANCO
+
+3-criado um banco de dados e feito a conexão
+
+INSTALANDO SISTEMA DE LOGIN BREEZE
+
+4-instalando o breeze 
+    no container do php
+        composer update
+        composer require laravel/breeze --dev
+        php artisan breeze:install
+    no docker 
+        npm install && npm run dev
+
+5-rodada a migrations padrão 
+    php artisan migrate 
+
+CRIANDO A HOME
+
+6-confugurado a Route e a navigation.blade.php 
+
+CRIANDO A CLIENT 
+
+7-configurado a Route, ClientController, model Client e a navigation.blade.php 
+    criada a view client.blade.php 
+    organizada a parte de front-end(HTML, CSS(tailwind)) de cliente 
+
+
+
+
+
