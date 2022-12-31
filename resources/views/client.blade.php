@@ -1,3 +1,9 @@
+<style>
+    .toggle{
+        visibility: hidden;
+    }
+</style>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -66,7 +72,7 @@
                             <div class="flex items-center justify-between" style="margin-top: 64px">
                                 <button
                                     class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                    type="button">
+                                    type="button" id="cliente_listar_button">
                                     Listar
                                 </button>
                             </div>
@@ -77,7 +83,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col toggle" id="cliente_table">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -148,5 +154,22 @@
 </x-app-layout>
 
 <script>
+    $(document).ready(function () {
+
+        //TOGGLE DO BOTÃO DE LISTAR OU OCULTAR TODOS OS CLIENTES (#cliente_listar_button)
+        $('#cliente_listar_button').click(function (e) { 
+            e.preventDefault();
+            if($('#cliente_listar_button').text() == 'Limpar'){
+                console.log("está em Listar");
+                $('#cliente_listar_button').text("Listar");
+                $('#cliente_table').toggleClass("toggle");
+            }else{
+                $('#cliente_listar_button').text("Limpar");
+                $('#cliente_table').toggleClass("toggle");
+                console.log("está em Limpar");
+            }
+        });
+        
+    });
     
 </script>

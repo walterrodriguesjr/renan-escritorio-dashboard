@@ -28,10 +28,10 @@ CRIANDO A HOME
 
 CRIANDO A CLIENT 
 
-7-configurado a Route, ClientController, model Client e a navigation.blade.php 
+7-configurado a Route, ClientController, model Client e a view client.blade.php 
     criada a view client.blade.php 
     organizada a parte de front-end(HTML, CSS(tailwind)) de cliente 
-
+    configurado o front do botão toggle de listar/limpar todos os cliente (#cliente_listar_button)
 
 
 
