@@ -159,17 +159,35 @@
         //TOGGLE DO BOTÃO DE LISTAR OU OCULTAR TODOS OS CLIENTES (#cliente_listar_button)
         $('#cliente_listar_button').click(function (e) { 
             e.preventDefault();
+            
             if($('#cliente_listar_button').text() == 'Limpar'){
                 console.log("está em Listar");
                 $('#cliente_listar_button').text("Listar");
                 $('#cliente_table').toggleClass("toggle");
             }else{
+                getClients();
                 $('#cliente_listar_button').text("Limpar");
                 $('#cliente_table').toggleClass("toggle");
                 console.log("está em Limpar");
             }
         });
-        
+
     });
-    
-</script>
+    function getClients() {
+
+        $.ajax({
+            type: "GET",
+            url: "/get-clients",
+            dataType: "json",
+            success: function (response) {
+                console.log(response.clients);
+
+
+
+            }
+        });
+        
+    }
+        
+        </script>
+        

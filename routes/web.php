@@ -23,6 +23,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+Route::get('get-clients', [ClientController::class, 'getClients']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
